@@ -17,13 +17,18 @@ public class Company {
         this.departments = departments;
     }
 
+//    public Employee[] getEmployeesByDepartment(String departmentName) throws DepartmentNotFoundException {
+//        for (Department department : departments) {
+//            if (department.getName().equals(departmentName)) {
+//                return department.getEmployees();
+//            }
+//        }
+//        throw new DepartmentNotFoundException();
+//    }
+// Estos dos metodos hacen los mismo
     public Employee[] getEmployeesByDepartment(String departmentName) throws DepartmentNotFoundException {
-        for (Department department : departments) {
-            if (department.getName().equals(departmentName)) {
-                return department.getEmployees();
-            }
-        }
-        throw new DepartmentNotFoundException();
+        Department department = getDepartmentInfo(departmentName);
+        return department.getEmployees();
     }
 
     public Department getDepartmentInfo(String departmentName) throws DepartmentNotFoundException {
@@ -37,8 +42,8 @@ public class Company {
 
     public Employee getEmployeeByNif(String nif) throws EmployeeNotFoundException {
         for (Department department : departments) {
-            for (Employee employee:department.getEmployees()){
-                if (employee.getNif().equals(nif)){
+            for (Employee employee : department.getEmployees()) {
+                if (employee.getNif().equals(nif)) {
                     return employee;
                 }
             }

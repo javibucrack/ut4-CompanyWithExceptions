@@ -1,6 +1,7 @@
 package org.iesfm;
 
 import org.iesfm.exceptions.DepartmentNotFoundException;
+import org.iesfm.exceptions.EmployeeNotFoundException;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,11 +32,20 @@ public class Main {
         } catch (DepartmentNotFoundException e) {
             System.out.println("No se ha encontrado el departamento");
         }
+        System.out.println(" ");
 
         try {
-            Department departments = company.getDepartmentInfo("sisissi");
+            Department department = company.getDepartmentInfo("sisissi");
+            department.showDepartment();
         } catch (DepartmentNotFoundException e) {
-
+            System.out.println("No se ha encontrado el departamento");
+        }
+        System.out.println(" ");
+        try {
+            Employee employee = company.getEmployeeByNif("12345678A");
+            employee.showEmployee();
+        } catch (EmployeeNotFoundException e) {
+            System.out.println("No se ha encontrado el empleado");
         }
     }
 
