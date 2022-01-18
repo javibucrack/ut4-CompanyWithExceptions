@@ -7,22 +7,22 @@ public class Main {
     public static void main(String[] args) {
         Employee[] employees1 = {
                 new Employee("12345678A", "Javier", "Peña", "Jefe"),
-                new Employee("87654321B", "Xocas", "mmhvso", "esto no es un juego"),
-                new Employee("12345678B", "Bicho", "Jr", "Extremo izquierdo")
+                new Employee("87654321B", "Paco", "Sanz", "EStf"),
+                new Employee("12345678B", "Gomez", "Andrada", "Empleado")
         };
         Employee[] employees2 = {
-                new Employee("12345678C", "Vini", "Ofisial", "carrito"),
-                new Employee("87654321D", "Lio", "Messi", "pexofrio"),
-                new Employee("12345678E", "Nerea", "Perez", "Romper todo")
+                new Employee("12345678C", "Lorenzo", "Lopez", "Becario"),
+                new Employee("87654321D", "Maria", "Sanchez", "Directora"),
+                new Employee("12345678E", "Nerea", "Perez", "Empleada")
         };
 
         Department[] department1 = {
                 new Department("Mercado", employees1),
-                new Department("sisissi", employees2)
+                new Department("Comunicaciones", employees2)
         };
 
 
-        Company company = new Company("AAAAAAAAAA", "34h6jb3h6b3", department1);
+        Company company = new Company("Kompany", "34h6jb3h6b3", department1);
 
         try {
             Employee[] employees = company.getEmployeesByDepartment("Mercado");
@@ -30,15 +30,15 @@ public class Main {
                 employee.showEmployee();
             }
         } catch (DepartmentNotFoundException e) {
-            System.out.println("No se ha encontrado el departamento");
+            System.out.println("No se ha encontrado el departamento " + e.getDepartmentName());
         }
         System.out.println(" ");
 
         try {
-            Department department = company.getDepartmentInfo("sisissi");
+            Department department = company.getDepartmentInfo("A");
             department.showDepartment();
         } catch (DepartmentNotFoundException e) {
-            System.out.println("No se ha encontrado el departamento");
+            System.out.println("No se ha encontrado el departamento " + e.getDepartmentName());
         }
         System.out.println(" ");
         try {

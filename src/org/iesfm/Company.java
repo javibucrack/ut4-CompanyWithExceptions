@@ -37,7 +37,7 @@ public class Company {
                 return department;
             }
         }
-        throw new DepartmentNotFoundException();
+        throw new DepartmentNotFoundException(departmentName);
     }
 
     public Employee getEmployeeByNif(String nif) throws EmployeeNotFoundException {
