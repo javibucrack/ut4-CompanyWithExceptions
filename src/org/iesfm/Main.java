@@ -26,10 +26,10 @@ public class Main {
         try {
             Employee[] employees = company.getEmployeesByDepartment("Mercado");
             for (Employee employee : employees) {
-                System.out.println(employee.getName());
+                employee.showEmployee();
             }
         } catch (DepartmentNotFoundException e) {
-
+            System.out.println("No se ha encontrado el departamento");
         }
 
         try {

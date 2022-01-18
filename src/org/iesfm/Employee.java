@@ -17,7 +17,7 @@ public class Employee {
     }
 
     public void showEmployee(){
-        System.out.println(name+" "+surname+" "+" con el NIF "+nif+" trabaja de "+ role);
+        System.out.println(name+" "+surname+" "+"con el NIF "+nif+" trabaja de "+ role);
     }
 
     public String getNif() {

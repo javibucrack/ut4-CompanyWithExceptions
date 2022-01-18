@@ -26,12 +26,24 @@ public class Company {
         throw new DepartmentNotFoundException();
     }
 
-    public Department getDepartmentInfo(String departmentName)throws DepartmentNotFoundException{
-        for (Department department:departments){
-            if (department.getName().equals(departmentName)){
-                department.showDepartment();
+    public Department getDepartmentInfo(String departmentName) throws DepartmentNotFoundException {
+        for (Department department : departments) {
+            if (department.getName().equals(departmentName)) {
+                return department;
             }
         }
+        throw new DepartmentNotFoundException();
+    }
+
+    public Employee getEmployeeByNif(String nif) throws EmployeeNotFoundException {
+        for (Department department : departments) {
+            for (Employee employee:department.getEmployees()){
+                if (employee.getNif().equals(nif)){
+                    return employee;
+                }
+            }
+        }
+        throw new EmployeeNotFoundException();
     }
 
     public String getName() {
