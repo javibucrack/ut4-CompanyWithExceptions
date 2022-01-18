@@ -42,10 +42,10 @@ public class Main {
         }
         System.out.println(" ");
         try {
-            Employee employee = company.getEmployeeByNif("12345678A");
+            Employee employee = company.getEmployeeByNif("1234567A");
             employee.showEmployee();
         } catch (EmployeeNotFoundException e) {
-            System.out.println("No se ha encontrado el empleado");
+            System.out.println("No se ha encontrado el empleado con el NIF: "+e.getNif());
         }
     }
 

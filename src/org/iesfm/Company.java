@@ -48,7 +48,7 @@ public class Company {
                 }
             }
         }
-        throw new EmployeeNotFoundException();
+        throw new EmployeeNotFoundException(nif);
     }
 
     public String getName() {
